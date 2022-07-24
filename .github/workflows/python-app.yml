@@ -28,7 +28,7 @@ jobs:
       run: |
         git config --local user.email "1737499156@qq.com"
         git config --local user.name "sti1l-0"
-        git commit -m "auto generate menu" -a
+        git commit -m "auto generate index" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
