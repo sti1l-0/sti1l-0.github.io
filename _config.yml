@@ -1,2 +1,1 @@
-url: https://<your-github-username>.github.io
-baseurl: 
+theme: jekyll-theme-leap-day
