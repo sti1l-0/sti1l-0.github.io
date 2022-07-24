@@ -1,10 +1,12 @@
 ## 根据GitHub上已有的md文件，在index页面上添加一个目录
 import os
+from urllib import parse
 
 MdFileList = [i for i in os.listdir() if i[-3:]=='.md']
 print("you have %d MD file" % len(MdFileList))
 
 def URLTemplate(text,url):
+    url = parse.quote(url)
     return "[%s](https://sti1l-0.github.io/%s)" % (text, url)
 
 index_md = """
