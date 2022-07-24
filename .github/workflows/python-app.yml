@@ -26,8 +26,7 @@ jobs:
     - name: Test with pytest
       run: |
         python create_index.py
-    - name: Commit && Push
-      run: |
-        uses: actions-js/push@v1.3
-        with:
+    - name: Commit & Push changes
+      uses: actions-js/push@master
+      with:
           github_token: ${{ secrets.BLOG_ACTION_TOKEN }}
