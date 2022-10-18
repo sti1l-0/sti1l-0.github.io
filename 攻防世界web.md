@@ -38,3 +38,17 @@ if($stuff === $array && $stuff[0] != 'admin') { ##强等于，首项不等于
 - 用$1、$@、反引号这些绕过命令的正则
 - *利用ls -i读取文件的inode，不需要文件名就能指明文件*
 - *创建变量ab分别等于f和lag利用$a$b拼接出flag*
+
+## lottery
+
+分析源码，看到api.php中用于判断中奖号码的函数是
+
+``` php
+for($i=0; $i<7; $i++){
+		if($numbers[$i] == $win_numbers[$i]){	##这里用了弱等于
+			$same_count++;
+		}
+	}
+```
+
+php在类型转换时，bool与非bool比较会把非bool转换为bool。构造请求传入字符串为true，使得比较时开奖号码转换即可。
